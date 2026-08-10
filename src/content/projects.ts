@@ -16,43 +16,24 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "aurora-dashboard",
-    title: "Aurora Dashboard",
+    slug: "strong-now-labs",
+    title: "Strong Now Labs",
     year: "2025",
-    role: "Product Engineer",
+    role: "Full-Stack Developer",
     description:
-      "Plataforma de analytics em tempo real com visualizações interativas e um sistema de temas totalmente customizável.",
+      "Mostruário digital para exibir produtos e serviços da Strong Now Labs.",
     tags: ["Next.js", "TypeScript", "D3.js"],
     mediaVariant: "aurora",
+    mediaSrc: "media/projects/strong-now-labs.webp",
   },
   {
-    slug: "nomad-travel",
-    title: "Nomad",
+    slug: "vitrine-digital",
+    title: "Vitrine Digital",
     year: "2024",
     role: "Full-Stack Developer",
     description:
-      "Aplicativo de planejamento de viagens com roteiros gerados por IA e sincronização colaborativa em tempo real.",
-    tags: ["React Native", "Node.js", "PostgreSQL"],
+      "Saas para gerenciar anunciantes e anuncios passados em uma tela publica(Tv, Painel, etc)",
+    tags: ["React", "TypeScript", "NestJS"],
     mediaVariant: "conic",
-  },
-  {
-    slug: "studio-os",
-    title: "Studio OS",
-    year: "2024",
-    role: "Front-End Lead",
-    description:
-      "Sistema operacional visual para estúdios criativos gerenciarem projetos, ativos e feedback de clientes.",
-    tags: ["Next.js", "Tailwind", "Framer Motion"],
-    mediaVariant: "grid",
-  },
-  {
-    slug: "ember-commerce",
-    title: "Ember Commerce",
-    year: "2023",
-    role: "Full-Stack Developer",
-    description:
-      "E-commerce headless com checkout otimizado e uma experiência de vitrine editorial, cinematográfica.",
-    tags: ["Next.js", "Stripe", "Sanity"],
-    mediaVariant: "ember",
   },
 ];

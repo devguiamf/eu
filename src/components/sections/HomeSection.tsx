@@ -25,7 +25,7 @@ export function HomeSection() {
           variant="aurora"
           src={profile.heroMediaSrc}
           type={profile.heroMediaType ?? "video"}
-          className="h-full w-full"
+          className="h-full w-full object-cover"
         />
       </ParallaxLayer>
 

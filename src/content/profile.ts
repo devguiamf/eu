@@ -22,4 +22,7 @@ export const profile: Profile = {
     "Sou um desenvolvedor apaixonado por interfaces cinematográficas e experiências que contam histórias através do movimento.",
     "Nos últimos anos venho unindo engenharia de front-end com direção de arte, buscando sempre o equilíbrio entre performance e emoção.",
   ],
+  heroMediaSrc: "/media/hero-loop.gif",
+  heroMediaType: "gif",
+  portraitSrc: "/media/perfil.png",
 };
