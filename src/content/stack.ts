@@ -23,8 +23,9 @@ export interface CertificateItem {
 export const techStack: TechItem[] = [
   { name: "TypeScript", category: "Linguagem" },
   { name: "React", category: "Framework" },
-  { name: "Next.js", category: "Framework" },
+  { name: "Angular", category: "Framework" },
   { name: "Node.js", category: "Runtime" },
+  { name: "NestJS", category: "Framework" },
   { name: "Tailwind CSS", category: "Estilização" },
   { name: "Framer Motion", category: "Animação" },
   { name: "PostgreSQL", category: "Banco de dados" },
@@ -32,16 +33,16 @@ export const techStack: TechItem[] = [
 ];
 
 export const courses: CourseItem[] = [
-  { title: "Ciência da Computação", institution: "Universidade Federal", year: "2021–2025" },
-  { title: "Motion Design para Produtos Digitais", institution: "Rocketseat", year: "2024" },
-  { title: "Arquitetura de Software Avançada", institution: "Alura", year: "2023" },
+  { title: "Mecatronica", institution: "ETEC - Franca", year: "2015–2017" },
+  { title: "DSM - Desenvolvimento de Software Multiplataforma", institution: "FATEC - Franca", year: "2021–2023" },
 ];
 
 export const books: BookItem[] = [
+  { title: "Use a Cabeça! Padrões de Projetos - 2° Edição revisada", author: "Eric Freeman e Elisabeth Freeman" },
+  { title: "Domain Driven Design", author: "Eric Evans" },
+  { title: "Clean Code", author: "Robert C. Martin" },
+  { title: "Clean Architecture", author: "Robert C. Martin" },
   { title: "Refactoring", author: "Martin Fowler" },
-  { title: "Designing Interfaces", author: "Jenifer Tidwell" },
-  { title: "The Design of Everyday Things", author: "Don Norman" },
-  { title: "Atomic Habits", author: "James Clear" },
 ];
 
 export const certificates: CertificateItem[] = [

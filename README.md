@@ -29,6 +29,22 @@ npm run lint    # eslint
 npx tsc --noEmit  # type-check
 ```
 
+## Deploy with Docker
+
+Production image uses Next.js `standalone` output. On a VPS (or locally):
+
+```bash
+docker compose up -d --build
+```
+
+Open [http://localhost:3000](http://localhost:3000) (or `http://<VPS-IP>:3000`).
+
+To update after pulling new code:
+
+```bash
+git pull && docker compose up -d --build
+```
+
 ## Structure
 
 ```

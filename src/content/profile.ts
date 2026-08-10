@@ -13,14 +13,16 @@ export interface Profile {
 }
 
 export const profile: Profile = {
-  name: "Fulano da Silva",
+  name: "Guilherme de Almeida",
   role: "Desenvolvedor Full-Stack & Criador Digital",
   welcome: "Bem-vindo",
-  tagline: "Eu construo interfaces que respiram — onde código e narrativa se encontram.",
-  location: "São Paulo, Brasil",
+  tagline: "Eu faço de tudo e ainda fica bom :)",
+  location: "Franca, São Paulo/Brasil",
   bio: [
-    "Sou um desenvolvedor apaixonado por interfaces cinematográficas e experiências que contam histórias através do movimento.",
-    "Nos últimos anos venho unindo engenharia de front-end com direção de arte, buscando sempre o equilíbrio entre performance e emoção.",
+    "Sou um desenvolvedor apaixonado por tecnologia e inovação.",
+    "Trabalho com desenvolvimento web há mais de 5 anos.",
+    "Atuo como desenvolvedor full-stack",
+    "Sou um entusiasta de novas tecnologias e sempre em busca de novos desafios.",
   ],
   heroMediaSrc: "/media/hero-loop.gif",
   heroMediaType: "gif",

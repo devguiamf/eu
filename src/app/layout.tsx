@@ -27,9 +27,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fulano da Silva — Portfólio",
+  title: "Guilherme de Almeida — Portfólio",
   description:
-    "Portfólio cinematográfico de Fulano da Silva: trajetória, tecnologia, projetos e contato.",
+    "Tem umas coisa minha ai, pode olhar eu deixo!",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
