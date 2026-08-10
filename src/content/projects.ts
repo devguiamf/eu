@@ -24,7 +24,7 @@ export const projects: Project[] = [
       "Mostruário digital para exibir produtos e serviços da Strong Now Labs.",
     tags: ["Next.js", "TypeScript", "D3.js"],
     mediaVariant: "aurora",
-    mediaSrc: "/media/projects/strong-now-labs.webp",
+    mediaSrc: "/projects/strong-now-labs.webp",
     mediaType: "gif",
   },
   {
@@ -36,5 +36,7 @@ export const projects: Project[] = [
       "Saas para gerenciar anunciantes e anuncios passados em uma tela publica(Tv, Painel, etc)",
     tags: ["React", "TypeScript", "NestJS"],
     mediaVariant: "conic",
+    mediaSrc: "/projects/vitrine-digital.webp",
+    mediaType: "gif",
   },
 ];

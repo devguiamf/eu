@@ -23,8 +23,8 @@ interface MediaSlotProps {
 }
 
 const VARIANT_GRADIENTS: Record<MediaVariant, string> = {
-  aurora: "from-accent/25 via-ink to-[#3c2a1e]/60",
-  conic: "from-[#8a5a3c]/30 via-ink to-accent/15",
+  aurora: "from-black via-accent/50 to-[#1a1408]",
+  conic: "from-white via-[#3b82f6]/45 to-[#1e3a8a]/50",
   grid: "from-[#1c1a16] via-ink to-[#2a2420]",
   ember: "from-[#c65b3a]/25 via-ink to-accent/25",
 };
