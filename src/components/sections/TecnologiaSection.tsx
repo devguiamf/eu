@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { SectionShell } from "@/components/layout/SectionShell";
+import { CatRun } from "@/components/motion/CatRun";
 import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
 import { TiltCard } from "@/components/motion/TiltCard";
@@ -11,12 +13,17 @@ interface StudyEntry {
   meta: string;
 }
 
+const NEST_TRIGGER_CLICKS = 10;
+
 /**
  * Section 3 — Tecnologia / Estudos. A "backdoor" terminal-flavored panel:
  * tech-stack chips up top, then three scrollable study columns, each item
  * tilting toward the cursor with a soft glow on hover.
  */
 export function TecnologiaSection() {
+  const [nestClicks, setNestClicks] = useState(0);
+  const [catActive, setCatActive] = useState(false);
+
   const courseEntries: StudyEntry[] = courses.map((course) => ({
     title: course.title,
     meta: `${course.institution} · ${course.year}`,
@@ -29,6 +36,23 @@ export function TecnologiaSection() {
     title: certificate.title,
     meta: `${certificate.issuer} · ${certificate.year}`,
   }));
+
+  function handleTechClick(name: string) {
+    if (name !== "NestJS") {
+      setNestClicks(0);
+      return;
+    }
+
+    if (catActive) return;
+
+    const next = nestClicks + 1;
+    if (next > NEST_TRIGGER_CLICKS) {
+      setNestClicks(0);
+      setCatActive(true);
+      return;
+    }
+    setNestClicks(next);
+  }
 
   return (
     <SectionShell id="tecnologia" label="Tecnologia" className="bg-ink">
@@ -48,9 +72,15 @@ export function TecnologiaSection() {
         <StaggerGroup className="flex flex-wrap gap-2.5" stagger={0.035}>
           {techStack.map((tech) => (
             <StaggerItem key={tech.name}>
-              <TiltCard maxTilt={6} glow className="rounded-full border border-line px-4 py-2">
-                <span className="font-mono text-xs text-paper">{tech.name}</span>
-              </TiltCard>
+              <button
+                type="button"
+                onClick={() => handleTechClick(tech.name)}
+                className="cursor-pointer appearance-none border-0 bg-transparent p-0 text-left"
+              >
+                <TiltCard maxTilt={6} glow className="rounded-full border border-line px-4 py-2">
+                  <span className="font-mono text-xs text-paper">{tech.name}</span>
+                </TiltCard>
+              </button>
             </StaggerItem>
           ))}
         </StaggerGroup>
@@ -61,6 +91,8 @@ export function TecnologiaSection() {
           <StudyColumn label="Certificados" entries={certificateEntries} />
         </div>
       </div>
+
+      <CatRun active={catActive} onComplete={() => setCatActive(false)} />
     </SectionShell>
   );
 }

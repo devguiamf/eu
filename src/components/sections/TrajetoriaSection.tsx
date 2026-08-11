@@ -5,6 +5,7 @@ import { ParallaxLayer } from "@/components/motion/ParallaxLayer";
 import { Reveal } from "@/components/motion/Reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
 import { MediaSlot } from "@/components/motion/MediaSlot";
+import { useMotionPreference } from "@/components/providers/MotionPreferenceProvider";
 import { profile } from "@/content/profile";
 import { timeline } from "@/content/timeline";
 
@@ -14,6 +15,8 @@ import { timeline } from "@/content/timeline";
  * (independent internal scroll) cascades in as the panel enters view.
  */
 export function TrajetoriaSection() {
+  const { pointerEffectsEnabled } = useMotionPreference();
+
   return (
     <SectionShell id="trajetoria" label="Trajetória" className="bg-ink">
       <ParallaxLayer
@@ -31,13 +34,25 @@ export function TrajetoriaSection() {
       >
         <ParallaxLayer depth={0.45} className="flex flex-col gap-5 lg:gap-6">
           <Reveal className="aspect-[4/5] w-40 overflow-hidden rounded-sm border border-line sm:w-56 lg:w-full lg:max-w-sm">
-            <MediaSlot
-              alt={`Retrato de ${profile.name}`}
-              variant="conic"
-              type="gif"
-              src={profile.portraitSrc}
-              className="h-full w-full"
-            />
+            <div className="group relative h-full w-full">
+              <MediaSlot
+                alt={`Retrato de ${profile.name}`}
+                variant="conic"
+                type="gif"
+                src={profile.portraitSrc}
+                className="h-full w-full"
+              />
+              {pointerEffectsEnabled && (
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 flex items-center justify-center bg-ink/55 px-4 opacity-0 transition-all duration-300 ease-signature group-hover:opacity-100"
+                >
+                  <p className="translate-y-2 text-center font-mono text-xs leading-relaxed text-paper transition-transform duration-300 ease-signature group-hover:translate-y-0 sm:text-sm">
+                    Talvez tenha IA, uns 10%?
+                  </p>
+                </div>
+              )}
+            </div>
           </Reveal>
 
           <Reveal delay={0.15} className="max-w-sm">
