@@ -21,7 +21,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:5000](http://localhost:5000).
 
 ```bash
 npm run build   # production build
@@ -37,7 +37,7 @@ Production image uses Next.js `standalone` output. On a VPS (or locally):
 docker compose up -d --build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) (or `http://<VPS-IP>:3000`).
+Open [http://localhost:5000](http://localhost:5000) (or `http://<VPS-IP>:5000`).
 
 To update after pulling new code:
 
