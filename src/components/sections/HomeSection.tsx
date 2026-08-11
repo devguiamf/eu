@@ -10,30 +10,14 @@ import { useMotionPreference } from "@/components/providers/MotionPreferenceProv
 import { profile } from "@/content/profile";
 
 /**
- * Section 1 — Home. A looping media layer sits behind the kinetic name entrance,
- * drifting at a different scroll speed than the text above it (background vs.
- * foreground parallax depth).
+ * Section 1 — Home. Kinetic name entrance over a solid ink field, with a small
+ * looping media accent anchored to the bottom-left corner.
  */
 export function HomeSection() {
   const { reducedMotion } = useMotionPreference();
 
   return (
     <SectionShell id="home" label="Início" className="items-center justify-center bg-ink">
-      <ParallaxLayer depth={-0.6} className="absolute inset-x-0 -top-[15%] h-[130%]">
-        <MediaSlot
-          alt="Efeito visual animado de fundo"
-          variant="aurora"
-          src={profile.heroMediaSrc}
-          type={profile.heroMediaType ?? "video"}
-          className="h-full w-full object-cover"
-        />
-      </ParallaxLayer>
-
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/60"
-      />
-
       <ParallaxLayer
         depth={0.3}
         className="relative z-10 flex flex-col items-center px-6 text-center"
@@ -59,6 +43,17 @@ export function HomeSection() {
           {profile.tagline}
         </Reveal>
       </ParallaxLayer>
+
+      {profile.heroMediaSrc ? (
+        <div className="pointer-events-none absolute bottom-8 left-6 z-10 sm:bottom-10 sm:left-8">
+          <MediaSlot
+            alt="Animação decorativa"
+            src={profile.heroMediaSrc}
+            type={profile.heroMediaType ?? "video"}
+            className="h-40 w-40 sm:h-40 sm:w-40 [&_img]:object-contain [&_video]:object-contain"
+          />
+        </div>
+      ) : null}
 
       <Reveal
         delay={1.1}

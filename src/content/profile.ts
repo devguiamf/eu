@@ -7,7 +7,7 @@ export interface Profile {
   bio: string[];
   /** Optional path under /public, e.g. "/media/portrait.jpg". */
   portraitSrc?: string;
-  /** Optional path under /public for the hero background loop (gif/webm). */
+  /** Optional path under /public for the hero corner decoration (gif/webm). */
   heroMediaSrc?: string;
   heroMediaType?: "video" | "gif";
 }
