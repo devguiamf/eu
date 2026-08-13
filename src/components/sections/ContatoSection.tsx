@@ -23,6 +23,12 @@ const ICONS: Record<ContactChannel["id"], typeof DiscordIcon> = {
 export function ContatoSection() {
   return (
     <SectionShell id="contato" label="Contato" className="items-center justify-center bg-ink">
+      <div
+        data-shred-floor
+        className="pointer-events-none absolute inset-0 z-30 overflow-hidden"
+        aria-hidden
+      />
+
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-1/2 h-[70vmax] w-[70vmax] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-[120px]" />
         <div

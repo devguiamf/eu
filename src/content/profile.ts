@@ -24,7 +24,7 @@ export const profile: Profile = {
     "Atuo como desenvolvedor full-stack",
     "Sou um entusiasta de novas tecnologias e sempre em busca de novos desafios.",
   ],
-  heroMediaSrc: "/media/hero-loop.gif",
+  heroMediaSrc: "/media/hero-loop.svg",
   heroMediaType: "gif",
   portraitSrc: "/media/perfil.png",
 };

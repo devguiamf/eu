@@ -3,8 +3,8 @@
 import { SectionShell } from "@/components/layout/SectionShell";
 import { ParallaxLayer } from "@/components/motion/ParallaxLayer";
 import { Reveal } from "@/components/motion/Reveal";
+import { ShreddablePortrait } from "@/components/motion/ShreddablePortrait";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
-import { MediaSlot } from "@/components/motion/MediaSlot";
 import { useMotionPreference } from "@/components/providers/MotionPreferenceProvider";
 import { profile } from "@/content/profile";
 import { timeline } from "@/content/timeline";
@@ -33,15 +33,12 @@ export function TrajetoriaSection() {
         className="scrollbar-thin relative z-10 mx-auto grid h-full w-full max-w-6xl grid-cols-1 items-start gap-6 overflow-y-auto px-6 py-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-16 lg:overflow-visible lg:px-10 lg:py-24"
       >
         <ParallaxLayer depth={0.45} className="flex flex-col gap-5 lg:gap-6">
-          <Reveal className="aspect-[4/5] w-40 overflow-hidden rounded-sm border border-line sm:w-56 lg:w-full lg:max-w-sm">
-            <div className="group relative h-full w-full">
-              <MediaSlot
-                alt={`Retrato de ${profile.name}`}
-                variant="conic"
-                type="gif"
-                src={profile.portraitSrc}
-                className="h-full w-full"
-              />
+          <Reveal className="relative z-30 w-40 pb-12 sm:w-56 lg:w-full lg:max-w-sm">
+            <ShreddablePortrait
+              alt={`Retrato de ${profile.name}`}
+              src={profile.portraitSrc}
+              className="w-full"
+            >
               {pointerEffectsEnabled && (
                 <div
                   aria-hidden
@@ -52,7 +49,7 @@ export function TrajetoriaSection() {
                   </p>
                 </div>
               )}
-            </div>
+            </ShreddablePortrait>
           </Reveal>
 
           <Reveal delay={0.15} className="max-w-sm">
